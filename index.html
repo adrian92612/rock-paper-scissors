@@ -5,20 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors</title>
-  <script src="rps.js"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <div class="left">
-    <div class="card rock">
-      <img class="picture" src="pics/rock.jpg" alt="rock">
+    <div class="card">
+      <img class="picture player rock" src="pics/rock.jpg" alt="rock">
     </div>
-    <div class="card paper">
-      <img class="picture" src="pics/paper.jpg" alt="paper">
+    <div class="card">
+      <img class="picture player paper" src="pics/paper.jpg" alt="paper">
     </div>
-    <div class="card scissors">
-      <img class="picture" src="pics/scissors.jpg" alt="scissors">
+    <div class="card">
+      <img class="picture player scissors" src="pics/scissors.jpg" alt="scissors">
     </div>
   </div>
 
@@ -27,19 +26,20 @@
     <div class="top-details">
       <div class="name-display">
         <p>Your Name</p>
-        <p>5</p>
+        <p class="player-life">5</p>
       </div>
       <div class="match-details">
-        Round
+        <p class="round">ROUND</p>
+        <p class="result">...</p>
       </div>
       <div class="name-display">
         <p>Enemy Name</p>
-        <p>5</p>
+        <p class="computer-life">5</p>
       </div>
     </div>
     <div class="card-container">
-      <div class="fight-card"></div>
-      <div class="fight-card"></div>
+      <div class="fight-card player"></div>
+      <div class="fight-card computer"></div>
     </div>
   </div>
 
@@ -55,5 +55,6 @@
     </div>
   </div>
 
+  <script src="rps.js"></script>
 </body>
 </html>
