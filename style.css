@@ -1,0 +1,57 @@
+body {
+    height: 100vh;
+    background-image: url('pics/dark-arena.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: white;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 500px;
+    height: 90vh;
+
+    border: 1px solid white;
+}
+
+.top-details,
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card-container {
+    flex: 1;
+}
+
+.name-display {
+    padding: 10px;
+    text-align: center;
+}
+
+img {
+    width: 100px;
+    height: 150px;
+}
+
+.card {
+    width: 100px;
+    height: 150px;
+    margin: 50px;
+    border: 1px solid white;
+}
+
+.fight-card {
+    width: 200px;
+    height: 300px;
+    border: 1px solid white;
+}
