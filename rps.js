@@ -82,9 +82,10 @@ const fightCardPlayer = document.querySelector('.fight-card.player');
 const fightCardComputer = document.querySelector('.fight-card.computer');
 
 const audio1 = new Audio('audio/yeah.wav');
-const audio2 = new Audio('audio/argh.wav');
+const audio2 = new Audio('audio/argh.mp3');
 const audio3 = new Audio('audio/applause.wav');
 const audio4 = new Audio('audio/boo.wav');
+
 
 const cardPickPlayer = document.createElement('img')
 const cardPickComputer = document.createElement('img')
