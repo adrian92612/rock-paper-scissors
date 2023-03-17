@@ -4,6 +4,9 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     color: white;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -30,6 +33,12 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.top-details {
+    border-radius: 10px;
+    background-color: rgba(127, 255, 212, .3);
+    box-shadow: 0, 0, 10px, aquamarine;
 }
 
 .card-container {

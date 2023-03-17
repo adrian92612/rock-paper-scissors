@@ -8,54 +8,60 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="whole">
-  <div class="left">
-    <div class="card">
-      <img class="picture player rock" src="pics/rock.jpg" alt="rock">
-    </div>
-    <div class="card">
-      <img class="picture player paper" src="pics/paper.jpg" alt="paper">
-    </div>
-    <div class="card">
-      <img class="picture player scissors" src="pics/scissors.jpg" alt="scissors">
-    </div>
+
+  <div class="start-game">
+    <input type="text" value="Enter your name"/>
+    <button class="startBtn">START</button>
   </div>
 
-  <div class="center">
+  <div class="whole">
+    <div class="left">
+      <div class="card">
+        <img class="picture player rock" src="pics/rock.jpg" alt="rock">
+      </div>
+      <div class="card">
+        <img class="picture player paper" src="pics/paper.jpg" alt="paper">
+      </div>
+      <div class="card">
+        <img class="picture player scissors" src="pics/scissors.jpg" alt="scissors">
+      </div>
+    </div>
 
-    <div class="top-details">
-      <div class="name-display">
-        <p>Your Name</p>
-        <p class="player-life">5</p>
+    <div class="center">
+
+      <div class="top-details">
+        <div class="name-display">
+          <p>Your Name</p>
+          <p class="player-life">5</p>
+        </div>
+        <div class="match-details">
+          <p class="round">ROUND</p>
+          <p class="result">...</p>
+        </div>
+        <div class="name-display">
+          <p>Enemy Name</p>
+          <p class="computer-life">5</p>
+        </div>
       </div>
-      <div class="match-details">
-        <p class="round">ROUND</p>
-        <p class="result">...</p>
-      </div>
-      <div class="name-display">
-        <p>Enemy Name</p>
-        <p class="computer-life">5</p>
+      <div class="card-container">
+        <div class="fight-card player"></div>
+        <div class="fight-card computer"></div>
       </div>
     </div>
-    <div class="card-container">
-      <div class="fight-card player"></div>
-      <div class="fight-card computer"></div>
+
+    <div class="right">
+      <div class="card">
+        <img class="picture" src="pics/card-back.jpg" alt="scissors">
+      </div>
+      <div class="card">
+        <img class="picture" src="pics/card-back.jpg" alt="scissors">
+      </div>
+      <div class="card">
+        <img class="picture" src="pics/card-back.jpg" alt="scissors">
+      </div>
     </div>
+
+    <script src="rps.js"></script>
   </div>
-
-  <div class="right">
-    <div class="card">
-      <img class="picture" src="pics/card-back.jpg" alt="scissors">
-    </div>
-    <div class="card">
-      <img class="picture" src="pics/card-back.jpg" alt="scissors">
-    </div>
-    <div class="card">
-      <img class="picture" src="pics/card-back.jpg" alt="scissors">
-    </div>
-  </div>
-
-  <script src="rps.js"></script>
-</div>
 </body>
 </html>

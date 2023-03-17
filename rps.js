@@ -64,6 +64,7 @@ let rounds = 1;
 let gameOn = false;
 
 const whole = document.querySelector('.whole')
+const startGame = document.querySelector('.start-game');
 const cards = document.querySelectorAll('.picture.player');
 const pLifeIndicator = document.querySelector('.player-life');
 const cLifeIndicator = document.querySelector('.computer-life');
@@ -149,13 +150,27 @@ function playGame (choice, compChoice) {
 
     roundIndicator.innerText = `ROUND ${rounds++}`;
     winIndicator.innerText = result;
-    console.log(winIndicator)
-
 }
 
 cards.forEach((card) => card.addEventListener('click', getPlayerChoice));
 
+// function toggleGame() {
+//     gameOn = !gameOn;
+//     return {(gameOn) ? 
+//         startGame.style.display = 'block' ;
+//         whole.style.display = 'none' : 
+//         whole.style.display = 'flex' }
+// }
+
 function toggleGame() {
-    gameOn = !gameOn;
-    return (gameOn) ? whole.style.display = 'none' : whole.style.display = 'flex' ;
+    gameOn = !gameOn
+    if (gameOn) {
+        whole.style.display = 'none';
+        startGame.style.display = 'block';
+    } else {
+        whole.style.display = 'flex';
+        startGame.style.display = 'none';
+    }
 }
+
+toggleGame()
