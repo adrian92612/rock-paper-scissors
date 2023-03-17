@@ -5,12 +5,14 @@ body {
     background-position: center;
     background-size: cover;
 
+    color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.whole {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    color: white;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .center {
@@ -62,7 +64,7 @@ img {
     box-shadow: 0 0 20px aqua;
     border-radius: 10px;
 
-    transition: all 0.8s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 .card:hover,

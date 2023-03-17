@@ -61,8 +61,9 @@ let playerChoice = '';
 let playerLife = lives;
 let compLife = lives;
 let rounds = 1;
+let gameOn = false;
 
-
+const whole = document.querySelector('.whole')
 const cards = document.querySelectorAll('.picture.player');
 const pLifeIndicator = document.querySelector('.player-life');
 const cLifeIndicator = document.querySelector('.computer-life');
@@ -153,3 +154,8 @@ function playGame (choice, compChoice) {
 }
 
 cards.forEach((card) => card.addEventListener('click', getPlayerChoice));
+
+function toggleGame() {
+    gameOn = !gameOn;
+    return (gameOn) ? whole.style.display = 'none' : whole.style.display = 'flex' ;
+}
