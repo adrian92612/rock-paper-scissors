@@ -103,12 +103,8 @@ function hideCards () {
         rightCards.style.display = 'block'
         fightCardPlayer.removeChild(cardPickPlayer);
         fightCardComputer.removeChild(cardPickComputer);
-        fightCardPlayer.classList.remove('lose-border');
-        fightCardPlayer.classList.remove('win-border');
-        fightCardPlayer.classList.remove('tie-border');
-        fightCardComputer.classList.remove('lose-border');
-        fightCardComputer.classList.remove('win-border');
-        fightCardComputer.classList.remove('tie-border');
+        fightCardPlayer.classList.remove('lose-border', 'win-border', 'tie-border', 'win-card');
+        fightCardComputer.classList.remove('lose-border', 'win-border', 'tie-border', 'win-card');
     }, waitTime*1000);
 }
 
@@ -130,7 +126,7 @@ function playGame (choice, compChoice) {
         playerLife --;
         pLifeIndicator.innerText = playerLife;
         fightCardPlayer.classList.add('lose-border');
-        fightCardComputer.classList.add('win-border');
+        fightCardComputer.classList.add('win-border', 'win-card');
         if (playerLife == 0) {
             
             cards.forEach((card) => card.removeEventListener('click', getPlayerChoice));
@@ -138,7 +134,7 @@ function playGame (choice, compChoice) {
         }
     } else if (result == 'Win!') {
         compLife --;
-        fightCardPlayer.classList.add('win-border');
+        fightCardPlayer.classList.add('win-border', 'win-card');
         fightCardComputer.classList.add('lose-border');
         cLifeIndicator.innerText = compLife;
         if (compLife == 0) {
