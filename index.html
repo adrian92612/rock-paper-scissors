@@ -10,8 +10,8 @@
 <body>
 
   <div class="start-game">
-    <input type="text" value="Enter your name"/>
-    <button class="startBtn">START</button>
+    <input class="enter-name" type="text" maxlength="10" value="Enter your name"/>
+    <button class="start-btn">START</button>
   </div>
 
   <div class="whole">
@@ -31,7 +31,7 @@
 
       <div class="top-details">
         <div class="name-display">
-          <p>Your Name</p>
+          <p class="player-name">Your Name</p>
           <p class="player-life">5</p>
         </div>
         <div class="match-details">
@@ -39,9 +39,13 @@
           <p class="result">...</p>
         </div>
         <div class="name-display">
-          <p>Enemy Name</p>
+          <p>Computer</p>
           <p class="computer-life">5</p>
         </div>
+      </div>
+      <div class="result-container">
+        <p class="result-message"></p>
+        <button class="again-btn">Play Again?</button>
       </div>
       <div class="card-container">
         <div class="fight-card player"></div>

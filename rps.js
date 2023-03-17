@@ -55,7 +55,7 @@
 // }
 
 const lives = 5;
-const waitTime = 1.5; 
+const waitTime = 1; 
 
 let playerChoice = '';
 let playerLife = lives;
@@ -65,23 +65,36 @@ let gameOn = false;
 
 const whole = document.querySelector('.whole')
 const startGame = document.querySelector('.start-game');
+const enterName = document.querySelector('.enter-name');
+const playerName = document.querySelector('.player-name');
+const startBtn = document.querySelector('.start-btn');
+const againBtn = document.querySelector('.again-btn');
 const cards = document.querySelectorAll('.picture.player');
 const pLifeIndicator = document.querySelector('.player-life');
 const cLifeIndicator = document.querySelector('.computer-life');
 const roundIndicator = document.querySelector('.round');
 const winIndicator = document.querySelector('.result');
+const resultMessage = document.querySelector('.result-message');
+const resultContainer = document.querySelector('result-container');
 const leftCards = document.querySelector('.left');
 const rightCards = document.querySelector('.right');
 const fightCardPlayer = document.querySelector('.fight-card.player');
 const fightCardComputer = document.querySelector('.fight-card.computer');
+
+const audio1 = new Audio('audio/yeah.wav');
+const audio2 = new Audio('audio/argh.wav');
+const audio3 = new Audio('audio/applause.wav');
+const audio4 = new Audio('audio/boo.wav');
 
 const cardPickPlayer = document.createElement('img')
 const cardPickComputer = document.createElement('img')
 
 const loseMsg = 'Defeated and Humiliated!';
 const winMsg = 'Glory is all yours!';
+const loseColor = 'red';
+const winColor = 'gold';
 
-// rockPic.src= 'pics/rock.jpg';
+//againBtn.innerText = '';
 
 function getPlayerChoice() {
     playerChoice = (this.classList.contains('rock')) ? 'rock' 
@@ -129,19 +142,26 @@ function playGame (choice, compChoice) {
         pLifeIndicator.innerText = playerLife;
         fightCardPlayer.classList.add('lose-border');
         fightCardComputer.classList.add('win-border', 'win-card');
+        audio2.play()
         if (playerLife == 0) {
-            
             cards.forEach((card) => card.removeEventListener('click', getPlayerChoice));
-            result = loseMsg;
+            resultMessage.innerText = loseMsg;
+            resultMessage.style.color = loseColor;
+            audio4.play()
+            againBtn.style.display = 'block';
         }
     } else if (result == 'Win!') {
         compLife --;
         fightCardPlayer.classList.add('win-border', 'win-card');
         fightCardComputer.classList.add('lose-border');
         cLifeIndicator.innerText = compLife;
+        audio1.play()
         if (compLife == 0) {
             cards.forEach((card) => card.removeEventListener('click', getPlayerChoice));
-            result = winMsg;
+            resultMessage.innerText = winMsg;
+            resultMessage.style.color = winColor;
+            againBtn.style.display = 'block';
+            audio3.play()
         }
     } else {
         fightCardPlayer.classList.add('tie-border');
@@ -153,6 +173,8 @@ function playGame (choice, compChoice) {
 }
 
 cards.forEach((card) => card.addEventListener('click', getPlayerChoice));
+startBtn.addEventListener('click', toggleGame);
+againBtn.addEventListener('click', toggleGame);
 
 // function toggleGame() {
 //     gameOn = !gameOn;
@@ -166,10 +188,25 @@ function toggleGame() {
     gameOn = !gameOn
     if (gameOn) {
         whole.style.display = 'none';
-        startGame.style.display = 'block';
+        startGame.style.display = 'flex';
+        againBtn.style.display = 'none';
     } else {
         whole.style.display = 'flex';
         startGame.style.display = 'none';
+       // resultContainer.style.display = 'none';
+
+        playerChoice = '';
+        playerLife = lives;
+        compLife = lives;
+        rounds = 1;
+
+        playerName.innerText = enterName.value;
+        roundIndicator.innerText = `ROUND 1`;
+        winIndicator.innerText = `.....`;
+        resultMessage.innerText = ``;
+        cLifeIndicator.innerText = compLife;
+        pLifeIndicator.innerText = playerLife;
+        cards.forEach((card) => card.addEventListener('click', getPlayerChoice));
     }
 }
 
